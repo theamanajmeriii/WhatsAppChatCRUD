@@ -1,0 +1,43 @@
+<h1>All Chats</h1>
+
+<a href="/chats/new">Create New Chat</a>
+
+<hr>
+
+<% for(chat of chats){ %>
+
+<div>
+
+    <p>
+        <b>From:</b> <%= chat.from %>
+    </p>
+
+    <p>
+        <b>To:</b> <%= chat.to %>
+    </p>
+
+    <p>
+        <%= chat.message %>
+    </p>
+
+    <p>
+        <%= chat.created_at.toDateString() %>
+    </p>
+
+    <a href="/chats/<%= chat._id %>/edit">
+        Edit
+    </a>
+
+    <form
+    method="POST"
+    action="/chats/<%= chat._id %>?_method=DELETE">
+
+        <button>Delete</button>
+
+    </form>
+
+</div>
+
+<hr>
+
+<% } %>

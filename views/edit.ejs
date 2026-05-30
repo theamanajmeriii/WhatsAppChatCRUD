@@ -1,0 +1,14 @@
+<h1>Edit Message</h1>
+
+<form
+method="POST"
+action="/chats/<%= chat._id %>?_method=PUT">
+
+    <textarea
+    name="message"><%= chat.message %></textarea>
+
+    <br><br>
+
+    <button>Update</button>
+
+</form>
